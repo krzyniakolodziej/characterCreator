@@ -1,6 +1,12 @@
 package com.characterCreator.entities.character.head;
 
+import com.characterCreator.entities.character.color.Color;
+import lombok.Data;
+
+@Data
 public class Head {
-    private boolean hasEyes;
-    private boolean hasLips;
+    private Color eyes;
+    private Color lips;
+    private Color hair;
+    private boolean hasLongHair;
 }
