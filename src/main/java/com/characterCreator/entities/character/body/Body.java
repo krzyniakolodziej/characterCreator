@@ -1,6 +1,6 @@
 package com.characterCreator.entities.character.body;
 
-import com.characterCreator.entities.character.color.Color;
+import javafx.scene.paint.Color;
 
 
 public class Body {
@@ -8,6 +8,12 @@ public class Body {
     private Color skin;
     private boolean isFat;
     private boolean hasLimbs;
+
+    public Body(Color skin, boolean isFat, boolean hasLimbs) {
+        this.skin = skin;
+        this.isFat = isFat;
+        this.hasLimbs = hasLimbs;
+    }
 
     public Color getSkin() {
         return skin;

@@ -1,6 +1,6 @@
 package com.characterCreator.entities.character.head;
 
-import com.characterCreator.entities.character.color.Color;
+import javafx.scene.paint.Color;
 
 public class Head {
     private Color eyes;
@@ -9,6 +9,13 @@ public class Head {
     private boolean hasLongHair;
 
     public Head() {};
+
+    public Head(Color eyes, Color lips, Color hair, boolean hasLongHair) {
+        this.eyes = eyes;
+        this.lips = lips;
+        this.hair = hair;
+        this.hasLongHair = hasLongHair;
+    }
 
     public Color getEyes() {
         return eyes;
