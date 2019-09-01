@@ -21,6 +21,9 @@ public class CharacterController {
 
     @PostMapping("/characters/addNew")
     public String addNew(@RequestBody Map<String, String> body) {
+        if(body.get("name")==null || body.get("name").equalsIgnoreCase("null")) {
+            return "Provide a valid character name";
+        }
         return characterData.addNewCharacter(new Head(new EntityColor(body.get("eyes")), new EntityColor(body.get("lips")), new EntityColor(body.get("hair")),
                 Boolean.parseBoolean(body.get("hasLongHair"))),
                 new Body(new EntityColor(body.get("skin")), Boolean.parseBoolean(body.get("isFat")), Boolean.parseBoolean(body.get("hasLimbs"))),
