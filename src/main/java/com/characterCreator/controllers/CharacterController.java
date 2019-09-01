@@ -21,9 +21,16 @@ public class CharacterController {
 
     @PostMapping("/characters/addNew")
     public String addNew(@RequestBody Map<String, String> body) {
-        return characterData.addNewCharacter(new Head(new EntityColor(body.get("eyes")), new EntityColor(body.get("lips")), new EntityColor(body.get("hair")),
-                Boolean.parseBoolean(body.get("hasLongHair"))),
-                new Body(new EntityColor(body.get("skin")), Boolean.parseBoolean(body.get("isFat")), Boolean.parseBoolean(body.get("hasLimbs"))),
+        return characterData.addNewCharacter(
+                new Head(
+                        new EntityColor(body.get("eyes")),
+                        new EntityColor(body.get("lips")),
+                        new EntityColor(body.get("hair")),
+                        Boolean.parseBoolean(body.get("hasLongHair"))),
+                new Body(
+                        new EntityColor(body.get("skin")),
+                        Boolean.parseBoolean(body.get("isFat")),
+                        Boolean.parseBoolean(body.get("hasLimbs"))),
                 body.get("name"));
     }
 

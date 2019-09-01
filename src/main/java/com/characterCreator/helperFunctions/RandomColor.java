@@ -1,4 +1,4 @@
-package com.characterCreator.entities.character.color;
+package com.characterCreator.helperFunctions;
 
 import java.util.Random;
 

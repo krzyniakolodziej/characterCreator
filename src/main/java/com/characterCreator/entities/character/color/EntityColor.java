@@ -1,5 +1,6 @@
 package com.characterCreator.entities.character.color;
 
+import com.characterCreator.helperFunctions.RandomColor;
 public class EntityColor {
     private String color;
 

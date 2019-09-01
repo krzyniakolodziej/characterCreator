@@ -8,7 +8,7 @@ public class Body {
     private boolean isFat;
     private boolean hasLimbs;
 
-    public Body() {};
+    public Body() {}
 
     public Body(EntityColor skin, boolean isFat, boolean hasLimbs) {
         this.skin = skin;
