@@ -5,7 +5,6 @@ import java.util.List;
 
 import com.characterCreator.entities.character.Character;
 import com.characterCreator.entities.character.color.EntityColor;
-import javafx.scene.paint.Color;
 import com.characterCreator.entities.character.head.*;
 import com.characterCreator.entities.character.body.*;
 
@@ -22,10 +21,15 @@ public class CharacterData {
    public CharacterData() {
        characterList = new ArrayList<Character>();
        characterList.add(new Character(
-               new Head(new EntityColor(), new EntityColor(), new EntityColor(), false),
+               new Head(
+                       new EntityColor(),
+                       new EntityColor(),
+                       new EntityColor(),
+                       false),
                new Body(
                        new EntityColor(),
-                       false, true),
+                       false,
+                       true),
                "Adam"));
        characterList.add(new Character(
                new Head(
@@ -45,6 +49,9 @@ public class CharacterData {
    }
 
    public String addNewCharacter(Head head, Body body, String name) {
+       if(name == null || name.equalsIgnoreCase("null")) {
+           return "Character name can't be null";
+       }
        characterList.add(new Character(head, body, name));
        return String.format("Character %s created successfully", name);
    }
