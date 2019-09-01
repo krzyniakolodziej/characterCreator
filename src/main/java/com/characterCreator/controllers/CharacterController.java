@@ -3,8 +3,8 @@ package com.characterCreator.controllers;
 import com.characterCreator.data.CharacterData;
 import com.characterCreator.entities.character.Character;
 import com.characterCreator.entities.character.body.Body;
+import com.characterCreator.entities.character.color.EntityColor;
 import com.characterCreator.entities.character.head.Head;
-import javafx.scene.paint.Color;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,27 +21,9 @@ public class CharacterController {
 
     @PostMapping("/characters/addNew")
     public String addNew(@RequestBody Map<String, String> body) {
-        int reyes = Integer.parseInt(body.get("reyes"));
-        int geyes = Integer.parseInt(body.get("geyes"));
-        int beyes = Integer.parseInt(body.get("beyes"));
-        int oeyes = Integer.parseInt(body.get("oeyes"));
-
-        int rlips = Integer.parseInt(body.get("rlips"));
-        int glips = Integer.parseInt(body.get("glips"));
-        int blips = Integer.parseInt(body.get("blips"));
-        int olips = Integer.parseInt(body.get("olips"));
-
-        int rhair = Integer.parseInt(body.get("rhair"));
-        int ghair = Integer.parseInt(body.get("ghair"));
-        int bhair = Integer.parseInt(body.get("bhair"));
-        int ohair = Integer.parseInt(body.get("ohair"));
-
-        return characterData.addNewCharacter(new Head(
-                new Color(reyes,geyes,beyes,oeyes),
-                new Color(rlips,glips,blips,olips),
-                new Color(rhair,ghair,bhair,ohair),
+        return characterData.addNewCharacter(new Head(new EntityColor(body.get("eyes")), new EntityColor(body.get("lips")), new EntityColor(body.get("hair")),
                 Boolean.parseBoolean(body.get("hasLongHair"))),
-                new Body(),
+                new Body(new EntityColor(body.get("skin")), Boolean.parseBoolean(body.get("isFat")), Boolean.parseBoolean(body.get("hasLimbs"))),
                 body.get("name"));
     }
 

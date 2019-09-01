@@ -1,25 +1,26 @@
 package com.characterCreator.entities.character.body;
 
-import javafx.scene.paint.Color;
+import com.characterCreator.entities.character.color.EntityColor;
 
 
 public class Body {
-    public Body() {};
-    private Color skin;
+    private EntityColor skin;
     private boolean isFat;
     private boolean hasLimbs;
 
-    public Body(Color skin, boolean isFat, boolean hasLimbs) {
+    public Body() {};
+
+    public Body(EntityColor skin, boolean isFat, boolean hasLimbs) {
         this.skin = skin;
         this.isFat = isFat;
         this.hasLimbs = hasLimbs;
     }
 
-    public Color getSkin() {
+    public EntityColor getSkin() {
         return skin;
     }
 
-    public void setSkin(Color skin) {
+    public void setSkin(EntityColor skin) {
         this.skin = skin;
     }
 

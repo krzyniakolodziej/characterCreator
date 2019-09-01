@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.characterCreator.entities.character.Character;
+import com.characterCreator.entities.character.color.EntityColor;
 import javafx.scene.paint.Color;
 import com.characterCreator.entities.character.head.*;
 import com.characterCreator.entities.character.body.*;
@@ -21,23 +22,19 @@ public class CharacterData {
    public CharacterData() {
        characterList = new ArrayList<Character>();
        characterList.add(new Character(
-               new Head(
-                       new Color(1, 1, 1, 0),
-                       new Color(1, 1, 1, 0),
-                       new Color(1, 1, 1, 0),
-                       false),
+               new Head(new EntityColor(), new EntityColor(), new EntityColor(), false),
                new Body(
-                       new Color(1, 1, 1, 0),
+                       new EntityColor(),
                        false, true),
                "Adam"));
        characterList.add(new Character(
                new Head(
-                       new Color(1, 1, 1, 0),
-                       new Color(1, 1, 1, 0),
-                       new Color(1, 1, 1, 0),
+                       new EntityColor(),
+                       new EntityColor(),
+                       new EntityColor(),
                        false),
                new Body(
-                       new Color(1, 1, 1, 0),
+                       new EntityColor(),
                        false,
                        true),
                "Bradam"));
